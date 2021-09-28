@@ -57,7 +57,7 @@ with mlflow.start_run(run_name="Sklearn Decision Tree"): #Pass in run_name using
 
 # COMMAND ----------
 
-model_name = "mlflow_101_demo" #Or replace with your model name
+model_name = "lee_ml_demo" #Or replace with your model name
 model_uri = "models:/{}/production".format(model_name)
 
 print("Loading PRODUCTION model stage with name: '{}'".format(model_uri))
@@ -68,3 +68,7 @@ print("Model object of type:", type(model))
 
 predictions = model.predict(pd.DataFrame(iris.data[::50]))
 pd.DataFrame(predictions).head()
+
+# COMMAND ----------
+
+
