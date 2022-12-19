@@ -64,6 +64,9 @@ print("Loading PRODUCTION model stage with name: '{}'".format(model_uri))
 model = mlflow.pyfunc.load_model(model_uri)
 print("Model object of type:", type(model))
 
+predictions = model.predict(pd.DataFrame(iris.data[::50]))
+pd.DataFrame(predictions).head()
+
 # COMMAND ----------
 
 predictions = model.predict(pd.DataFrame(iris.data[::50]))
